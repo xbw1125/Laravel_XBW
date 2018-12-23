@@ -1,5 +1,5 @@
 <?php
-echo '练习版本回退123';
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
