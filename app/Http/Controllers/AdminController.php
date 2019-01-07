@@ -9,15 +9,24 @@
 namespace App\Http\Controllers;
 
 use App\Admin;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        $result = Admin::where('id','>=',1)->orderby('id','desc')->get();
 
-        foreach ($result as $v){
-            echo $v->uuid."<br>";
+        $admin = new Admin();
+        $admin->id = 666;
+        $admin->uuid = 666;
+        $admin->name = 666;
+        $admin->image_url = 666;
+
+        $admin->save();
+        $result = Admin::where('id', '>=', 1)->orderby('id', 'desc')->get();
+
+        foreach ($result as $v) {
+            echo $v->uuid . "<br>";
         }
 
     }
