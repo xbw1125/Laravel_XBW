@@ -12,5 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Admin extends Model
 {
-
+    protected $guarded = [];
+    const CREATED_AT = 'creation_time';
+    const UPDATED_AT = 'update_time';
 }
