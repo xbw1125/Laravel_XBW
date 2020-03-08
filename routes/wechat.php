@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/server', 'ServerVerifyController@index');
+Route::any('/server', 'WeChatServerController@index');
 
 Route::group(['middleware' => ['web', 'wechat.oauth']], function () {
     Route::get('/user', function () {
