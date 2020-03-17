@@ -115,6 +115,20 @@ return [
             'database' => 0,
         ],
 
+        'session' => [
+            'host' => env('SESSION_REDIS_HOST', '127.0.0.1'),
+            'password' => env('SESSION_REDIS_PASSWORD', null),
+            'port' => env('SESSION_REDIS_PORT', 6379),
+            'database' => 0,
+        ],
+
+        'user' => [
+            'host' => env('USER_REDIS_HOST', '127.0.0.1'),
+            'password' => env('USER_REDIS_PASSWORD', null),
+            'port' => env('USER_REDIS_PORT', 6379),
+            'database' => 0,
+        ],
+
     ],
 
 ];
