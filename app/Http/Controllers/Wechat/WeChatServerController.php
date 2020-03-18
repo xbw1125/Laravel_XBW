@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\WeChat;
 
 use App\Http\Controllers\WeChat\Event\EventHandle;
+use App\Http\Controllers\WeChat\Menu\CustomMenu;
 use App\Http\Controllers\Wechat\MessageHandle\ImageMessageHandler;
 use App\Http\Controllers\Wechat\MessageHandle\TextMessageHandler;
 use App\Http\Controllers\Wechat\MessageHandle\VoiceMessageHandler;
@@ -18,6 +19,9 @@ class WeChatServerController
         $app->server->push(ImageMessageHandler::class, Message::IMAGE);
         $app->server->push(VoiceMessageHandler::class, Message::VOICE);
         $app->server->push(EventHandle::class, Message::EVENT);
+
+        CustomMenu::createMenu(); //创建菜单
+
         return $app->server->serve();
     }
 }
