@@ -4,7 +4,7 @@ namespace App\Http\Controllers\WeChat\Menu;
 
 use EasyWeChat\Factory;
 
-class CustomMenu
+class CustomMenuController
 {
     public static function createMenu()
     {
