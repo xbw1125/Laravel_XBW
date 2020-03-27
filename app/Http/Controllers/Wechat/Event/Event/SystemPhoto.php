@@ -16,7 +16,7 @@ trait SystemPhoto
         return '';
     }
 
-    public function systemPhotoOrAlbum()
+    public function systemPhotoTest()
     {
         Log::info('系统拍照---' . $this->payload);
         return '';

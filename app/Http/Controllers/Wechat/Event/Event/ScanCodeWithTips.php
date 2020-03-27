@@ -16,7 +16,7 @@ trait ScanCodeWithTips
         return '';
     }
 
-    public function scanCodeWithTips()
+    public function scanCodeWithTipsTest()
     {
         Log::info('扫码带提示---' . $this->payload);
         return '';

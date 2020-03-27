@@ -16,7 +16,7 @@ trait WeChatAlbum
         return '';
     }
 
-    public function systemPhotoOrAlbum()
+    public function weChatAlbumTest()
     {
         Log::info('微信相册发图---' . $this->payload);
         return '';
