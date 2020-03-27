@@ -18,7 +18,8 @@ trait WeChatAlbum
 
     public function weChatAlbumTest()
     {
-        Log::info('微信相册发图---' . $this->payload);
+        Log::info('微信相册发图---');
+        Log::info($this->payload);
         return '';
     }
 }

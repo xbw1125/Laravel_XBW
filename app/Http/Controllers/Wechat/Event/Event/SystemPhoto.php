@@ -18,7 +18,8 @@ trait SystemPhoto
 
     public function systemPhotoTest()
     {
-        Log::info('系统拍照---' . $this->payload);
+        Log::info('系统拍照---');
+        Log::info($this->payload);
         return '';
     }
 }

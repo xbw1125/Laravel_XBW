@@ -18,7 +18,8 @@ trait ScanCodeWithTips
 
     public function scanCodeWithTipsTest()
     {
-        Log::info('扫码带提示---' . $this->payload);
+        Log::info('扫码带提示---');
+        Log::info($this->payload);
         return '';
     }
 }

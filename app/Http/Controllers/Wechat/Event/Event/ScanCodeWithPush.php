@@ -18,7 +18,8 @@ trait ScanCodeWithPush
 
     public function scanCodeWithPushTest()
     {
-        Log::info('扫码推送事件---' . $this->payload);
+        Log::info('扫码推送事件---');
+        Log::info($this->payload);
         return '';
     }
 }

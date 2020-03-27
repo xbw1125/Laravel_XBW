@@ -18,7 +18,8 @@ trait SystemPhotoOrAlbum
 
     public function systemPhotoOrAlbumTest()
     {
-        Log::info('系统拍照或者从相册中选取照片---' . $this->payload);
+        Log::info('系统拍照或者从相册中选取照片---');
+        Log::info($this->payload);
         return '';
     }
 }
