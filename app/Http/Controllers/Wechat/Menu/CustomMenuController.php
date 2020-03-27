@@ -41,31 +41,31 @@ class CustomMenuController
                     [
                         "type" => "scancode_waitmsg",
                         "name" => "扫码带提示",
-                        "key" => "scanCodeWithTips",
+                        "key" => "scanCodeWithTipsTest",
                         "sub_button" => []
                     ],
                     [
                         "type" => "scancode_push",
                         "name" => "扫码推事件",
-                        "key" => "scanCodeWithPush",
+                        "key" => "scanCodeWithPushTest",
                         "sub_button" => []
                     ],
                     [
                         "type" => "pic_sysphoto",
                         "name" => "系统拍照发图",
-                        "key" => "systemPhoto",
+                        "key" => "systemPhotoTest",
                         "sub_button" => []
                     ],
                     [
                         "type" => "pic_photo_or_album",
                         "name" => "拍照或者相册发图",
-                        "key" => "systemPhotoOrAlbum",
+                        "key" => "systemPhotoOrAlbumTest",
                         "sub_button" => []
                     ],
                     [
                         "type" => "pic_weixin",
                         "name" => "微信相册发图",
-                        "key" => "rselfmenu_0_0",
+                        "key" => "weChatAlbumTest",
                         "sub_button" => []
                     ],
                 ],
