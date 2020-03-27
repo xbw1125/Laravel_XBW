@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\WeChat;
 
-use App\Http\Controllers\WeChat\Event\EventHandle;
-use App\Http\Controllers\Wechat\MessageHandle\ImageMessageHandler;
-use App\Http\Controllers\Wechat\MessageHandle\TextMessageHandler;
-use App\Http\Controllers\Wechat\MessageHandle\VoiceMessageHandler;
 use EasyWeChat\Factory;
 use \EasyWeChat\Kernel\Messages\Message;
+use App\Http\Controllers\WeChat\Event\EventHandle;
+use App\Http\Controllers\WeChat\MessageHandle\ImageMessageHandler;
+use App\Http\Controllers\WeChat\MessageHandle\TextMessageHandler;
+use App\Http\Controllers\WeChat\MessageHandle\VoiceMessageHandler;
+use App\Http\Controllers\WeChat\MessageHandle\LocationMessageHandler;
 
 class WeChatServerController
 {
@@ -17,6 +18,7 @@ class WeChatServerController
         $app->server->push(TextMessageHandler::class, Message::TEXT);
         $app->server->push(ImageMessageHandler::class, Message::IMAGE);
         $app->server->push(VoiceMessageHandler::class, Message::VOICE);
+        $app->server->push(LocationMessageHandler::class, Message::LOCATION);
         $app->server->push(EventHandle::class, Message::EVENT);
 
         return $app->server->serve();

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Wechat\MessageHandle;
+namespace App\Http\Controllers\WeChat\MessageHandle;
 
 use EasyWeChat\Kernel\Contracts\EventHandlerInterface;
 use Illuminate\Support\Facades\Log;

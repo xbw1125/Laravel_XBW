@@ -11,61 +11,67 @@ class CustomMenuController
         $app = Factory::officialAccount(config('wechat.official_account.default'));
         $buttons = [
             [
-                "type" => "click",
-                "name" => "一级菜单",
-                "key" => "V1001_TODAY_MUSIC"
-            ],
-            [
-                "name" => "菜单",
+                "name" => "click类型",
                 "sub_button" => [
                     [
-                        "type" => "view",
-                        "name" => "搜索",
-                        "url" => "http://www.soso.com/"
-                    ],
-                    [
-                        "type" => "view",
-                        "name" => "视频",
-                        "url" => "http://v.qq.com/"
-                    ],
-                    [
                         "type" => "click",
-                        "name" => "赞一下我们",
-                        "key" => "V1001_GOOD"
+                        "name" => "查看你的信息",
+                        "key" => "getUserInfo"
                     ],
                 ],
             ],
             [
-                "name" => "菜单1",
+                "name" => "view类型",
                 "sub_button" => [
                     [
                         "type" => "view",
-                        "name" => "搜索1",
-                        "url" => "http://www.soso.com/"
+                        "name" => "查看你的信息",
+                        "url" => "https://xbw.loftyzone.cn/wechat/user"
                     ],
                     [
                         "type" => "view",
-                        "name" => "视频1",
-                        "url" => "http://v.qq.com/"
+                        "name" => "爱奇艺视频",
+                        "url" => "https://www.iqiyi.com/"
+                    ],
+                ],
+            ],
+            [
+                "name" => "其他类型",
+                "sub_button" => [
+                    [
+                        "type" => "scancode_waitmsg",
+                        "name" => "扫码带提示",
+                        "key" => "scanCodeWithTips",
+                        "sub_button" => []
                     ],
                     [
-                        "type" => "click",
-                        "name" => "赞一下我们1",
-                        "key" => "V1001_GOOD"
+                        "type" => "scancode_push",
+                        "name" => "扫码推事件",
+                        "key" => "scanCodeWithPush",
+                        "sub_button" => []
                     ],
                     [
-                        "type" => "click",
-                        "name" => "第五个子菜单哈",
-                        "key" => "V1001_GOOD"
+                        "type" => "pic_sysphoto",
+                        "name" => "系统拍照发图",
+                        "key" => "systemPhoto",
+                        "sub_button" => []
                     ],
                     [
-                        "type" => "click",
-                        "name" => "第五个子菜单哈哈",
-                        "key" => "V1001_GOOD"
+                        "type" => "pic_photo_or_album",
+                        "name" => "拍照或者相册发图",
+                        "key" => "systemPhotoOrAlbum",
+                        "sub_button" => []
+                    ],
+                    [
+                        "type" => "pic_weixin",
+                        "name" => "微信相册发图",
+                        "key" => "rselfmenu_0_0",
+                        "sub_button" => []
                     ],
                 ],
             ],
         ];
         $app->menu->create($buttons);
+        return $app->server->serve();
     }
 }
