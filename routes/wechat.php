@@ -7,4 +7,6 @@ Route::post('/create_menu', 'Menu\CustomMenuController@createMenu');
 Route::group(['middleware' => ['web', 'wechat.oauth']], function () {
 
     Route::any('/user', 'User\UserInfoController@getUserInfo');
+
+    Route::post('/getConfig', 'Share\ShareController@jsConfigInit');
 });

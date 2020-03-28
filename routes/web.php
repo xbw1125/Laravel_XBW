@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
+Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/', 'HomeController@index');
     Route::resource('articles', 'ArticleController');
     Route::resource('comments', 'CommentsController');
@@ -24,3 +24,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::any('/admin_index', 'AdminController@index')->name('admin_index');
 Route::get('article/{id}', 'ArticleController@show');
 Route::post('comment', 'CommentController@store');
+
+Route::prefix('web')->group(function () {
+
+    Route::view('/share', 'wechat.WxShare', ['title' => '微信分享']);
+});

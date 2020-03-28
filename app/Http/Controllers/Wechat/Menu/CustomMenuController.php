@@ -26,12 +26,17 @@ class CustomMenuController
                     [
                         "type" => "view",
                         "name" => "查看你的信息",
-                        "url" => "https://xbw.loftyzone.cn/wechat/user"
+                        "url" => "/wechat/user"
                     ],
                     [
                         "type" => "view",
                         "name" => "爱奇艺视频",
                         "url" => "https://www.iqiyi.com/"
+                    ],
+                    [
+                        "type" => "view",
+                        "name" => "分享",
+                        "url" => "/web/share"
                     ],
                 ],
             ],
