@@ -26,7 +26,7 @@ class CustomMenuController
                     [
                         "type" => "view",
                         "name" => "查看你的信息",
-                        "url" => "/wechat/user"
+                        "url" => env('APP_URL', 'https://xbw.loftyzone.cn') . "wechat/user"
                     ],
                     [
                         "type" => "view",
@@ -36,7 +36,7 @@ class CustomMenuController
                     [
                         "type" => "view",
                         "name" => "分享",
-                        "url" => "/web/share"
+                        "url" => env('APP_URL', 'https://xbw.loftyzone.cn') . "/web/share"
                     ],
                 ],
             ],

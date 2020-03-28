@@ -29,7 +29,7 @@
                     wx.updateAppMessageShareData({
                         title: '分享给朋友/QQ', // 分享标题
                         desc: 'test123', // 分享描述
-                        link: 'https://xbw.loftyzone.cn/wechat/user', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                        link: {{ env('APP_URL', 'https://xbw.loftyzone.cn') }} +'/wechat/user',
                         imgUrl: '/images/wechat/share/index.jpg', // 分享图标
                         success: function () {
                             alert('分享成功');
@@ -39,7 +39,7 @@
                 $('#friend_circle').click(function () {
                     wx.updateTimelineShareData({
                         title: '分享到朋友圈/QQ空间', // 分享标题
-                        link: 'https://xbw.loftyzone.cn/wechat/user', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                        link: {{ env('APP_URL', 'https://xbw.loftyzone.cn') }} +'/wechat/user',
                         imgUrl: '/images/wechat/share/index.jpg', // 分享图标
                         success: function () {
                             alert('分享成功');
