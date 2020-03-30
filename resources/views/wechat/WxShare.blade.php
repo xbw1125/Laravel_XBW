@@ -10,8 +10,7 @@
     <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
 </head>
 <body>
-<button id="friend">点击分享朋友/好友</button>
-<button id="friend_circle">点击分享朋友圈/QQ空间</button>
+<h1>已自定义分享</h1>
 <button id="get_network_type">获取网络信息</button>
 <button id="get_location">获取地理位置信息</button>
 </body>
@@ -25,26 +24,22 @@
         }).then(function (res) {
             wx.config(res);
             wx.ready(function () {
-                $('#friend').click(function () {
-                    wx.updateAppMessageShareData({
-                        title: '分享给朋友/QQ', // 分享标题
-                        desc: 'test123', // 分享描述
-                        link: '{{ env("APP_URL", "https://xbw.loftyzone.cn") }}/wechat/user',
-                        imgUrl: '/images/wechat/share/index.jpg', // 分享图标
-                        success: function () {
-                            alert('分享成功');
-                        }
-                    });
+                wx.updateAppMessageShareData({
+                    title: '自定义分享给朋友/QQ', // 分享标题
+                    desc: 'test123', // 分享描述
+                    link: '{{ env("APP_URL", "https://xbw.loftyzone.cn") }}/wechat/user',
+                    imgUrl: '{{ config('cdn.url') }}/images/wechat/share/index.jpg', // 分享图标
+                    success: function () {
+                        alert('分享成功');
+                    }
                 });
-                $('#friend_circle').click(function () {
-                    wx.updateTimelineShareData({
-                        title: '分享到朋友圈/QQ空间', // 分享标题
-                        link: '{{ env("APP_URL", "https://xbw.loftyzone.cn") }}/wechat/user',
-                        imgUrl: '/images/wechat/share/index.jpg', // 分享图标
-                        success: function () {
-                            alert('分享成功');
-                        }
-                    });
+                wx.updateTimelineShareData({
+                    title: '自定义分享到朋友圈/QQ空间', // 分享标题
+                    link: '{{ env("APP_URL", "https://xbw.loftyzone.cn") }}/wechat/user',
+                    imgUrl: '{{ config('cdn.url') }}/images/wechat/share/index.jpg', // 分享图标
+                    success: function () {
+                        alert('分享成功');
+                    }
                 });
                 $('#get_network_type').click(function () {
                     wx.getNetworkType({
@@ -68,10 +63,10 @@
                 });
             });
             wx.error(function (res) {
-                alert(res);
+                //写入日志
             });
         }).catch(function (res) {
-            alert(res);
+            //写入日志
         });
     });
 </script>
