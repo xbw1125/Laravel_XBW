@@ -19,7 +19,7 @@
 
     $(function () {
         new Promise(function (resolve, reject) {
-            $.post('/wechat/getConfig', {}, function (res) {
+            $.post('/wechat/getConfig', {url: location.href.split('#')[0]}, function (res) {
                 res ? resolve(res) : reject('获取配置失败');
             }, 'json');
         }).then(function (res) {
