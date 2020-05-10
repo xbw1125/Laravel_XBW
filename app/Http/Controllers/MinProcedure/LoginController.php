@@ -12,13 +12,14 @@ class LoginController extends Controller
 
     public function index(Request $request)
     {
-        $app = Factory::miniProgram(config('wechat.official_account.default'));
+        $app = Factory::miniProgram(config('wechat.mini_program.default'));
 
         if (empty($request->get('code'))) {
             return $this->message('code is null', 400);
         }
         $session = $app->auth->session($request->get('code'));
-        Log::info('记录小程序登录session：' . $session);
+        Log::info('小程序登录code：' . $request->get('code'));
+        Log::info('小程序登录session：' . json_encode($session));
         return $this->success($session);
     }
 }
