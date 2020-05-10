@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\WeChat\Event\Event;
 
-use App\Http\Models\ThirdPartyUser;
+use App\Models\ThirdPartyUser;
 use EasyWeChat\Kernel\Messages\Text;
 use Illuminate\Support\Facades\Log;
 

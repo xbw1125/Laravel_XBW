@@ -28,4 +28,5 @@ Route::post('comment', 'CommentController@store');
 Route::prefix('web')->group(function () {
 
     Route::view('/share', 'wechat.WxShare', ['title' => '微信分享']);
+    Route::view('/bind_account', 'bind.bind_account', ['title' => '绑定账号']);
 });

@@ -30,7 +30,6 @@
                     link: '{{ env("APP_URL", "https://xbw.loftyzone.cn") }}/wechat/user',
                     imgUrl: '{{ config('cdn.url') }}/images/wechat/share/index.jpg', // 分享图标
                     success: function () {
-                        alert('分享成功');
                     }
                 });
                 wx.updateTimelineShareData({
@@ -38,7 +37,6 @@
                     link: '{{ env("APP_URL", "https://xbw.loftyzone.cn") }}/wechat/user',
                     imgUrl: '{{ config('cdn.url') }}/images/wechat/share/index.jpg', // 分享图标
                     success: function () {
-                        alert('分享成功');
                     }
                 });
                 $('#get_network_type').click(function () {
@@ -67,6 +65,7 @@
             });
         }).catch(function (res) {
             //写入日志
+            alert(res);
         });
     });
 </script>

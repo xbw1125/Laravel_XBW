@@ -10,7 +10,7 @@ class UserInfoController
     {
         $app = Factory::officialAccount(config('wechat.official_account.default'));
         $user = session('wechat.oauth_user.default'); // 拿到授权用户资料
-        dd($user);
+        var_dump($user);
         $userInfo = $app->user->get($user['openid']);
         dd($userInfo);
     }

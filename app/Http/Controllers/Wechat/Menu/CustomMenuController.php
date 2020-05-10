@@ -30,6 +30,11 @@ class CustomMenuController
                     ],
                     [
                         "type" => "view",
+                        "name" => "查看你的微信信息",
+                        "url" => env('APP_URL', 'https://xbw.loftyzone.cn') . "/wechat/wechat_user"
+                    ],
+                    [
+                        "type" => "view",
                         "name" => "爱奇艺视频",
                         "url" => "https://www.iqiyi.com/"
                     ],

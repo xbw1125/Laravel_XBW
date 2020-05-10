@@ -41,7 +41,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWeChatRoutes();
 
-        //
+        $this->mapMinProcedureRoutes();
     }
 
     /**
@@ -74,13 +74,24 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     /**
-     * 微信路由
+     * 微信公众号
      * @return void
      */
     protected function mapWeChatRoutes()
     {
         Route::prefix('wechat')
-            ->namespace($this->namespace . '\\WeChat')
+            ->namespace($this->namespace . '\WeChat')
             ->group(base_path('routes/wechat.php'));
+    }
+
+    /**
+     * 微信小程序
+     * @return void
+     */
+    protected function mapMinProcedureRoutes()
+    {
+        Route::prefix('minprocedure')
+            ->namespace($this->namespace . '\MinProcedure')
+            ->group(base_path('routes/minprocedure.php'));
     }
 }
