@@ -8,11 +8,13 @@ use App\Http\Controllers\WeChat\Event\EventHandle;
 use App\Http\Controllers\WeChat\MessageHandle\ImageMessageHandler;
 use App\Http\Controllers\WeChat\MessageHandle\TextMessageHandler;
 use App\Http\Controllers\WeChat\MessageHandle\VoiceMessageHandler;
+use EasyWeChat\OfficialAccount\Auth\AccessToken;
 
 class WeChatServerController
 {
     public function index()
     {
+
         $app = Factory::officialAccount(config('wechat.official_account.default'));
         $app->server->push(TextMessageHandler::class, Message::TEXT);
         $app->server->push(ImageMessageHandler::class, Message::IMAGE);
